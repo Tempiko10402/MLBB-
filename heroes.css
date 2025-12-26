@@ -1,0 +1,122 @@
+/* Скрываем стандартные кружочки радио-кнопок */
+input[name="hero-filter"] {
+    display: none;
+}
+
+/* Стилизация контейнера управления */
+.filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* Стилизация меток (которые выглядят как кнопки) */
+.filter-btn {
+    padding: 10px 25px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid #00d4ff;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении */
+.filter-btn:hover {
+    background: rgba(0, 212, 255, 0.3);
+}
+
+/* Подсветка активной «кнопки» через CSS */
+#all:checked ~ .filter-controls label[for="all"],
+#assassin:checked ~ .filter-controls label[for="assassin"],
+#tank:checked ~ .filter-controls label[for="tank"],
+#marksman:checked ~ .filter-controls label[for="marksman"],
+#fighter:checked ~ .filter-controls label[for="fighter"] {
+    background: #00d4ff;
+    color: #0a1628;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+}
+
+/* ЛОГИКА ФИЛЬТРАЦИИ */
+
+/* 1. Сначала скрываем все карточки, если выбран какой-то конкретный фильтр (кроме "Все") */
+#assassin:checked ~ .products-grid .product-card,
+#tank:checked ~ .products-grid .product-card,
+#marksman:checked ~ .products-grid .product-card,
+#fighter:checked ~ .products-grid .product-card {
+    display: none;
+}
+
+/* 2. Показываем только нужные карточки в зависимости от выбранного ID */
+#assassin:checked ~ .products-grid .item-assassin,
+#tank:checked ~ .products-grid .item-tank,
+#marksman:checked ~ .products-grid .item-marksman,
+#fighter:checked ~ .products-grid .item-fighter {
+    display: block;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Если выбрано "Все", показываем все карточки */
+#all:checked ~ .products-grid .product-card {
+    display: block;
+}
+
+/* Дополнительный бадж роли */
+.badge.role {
+    left: 15px;
+    right: auto;
+    background: linear-gradient(135deg, #00d4ff, #0096ff);
+}
+
+/* Контейнер для изображения внутри карточки */
+.product-image {
+    width: 100%;
+    height: 200px; /* Фиксированная высота для всех фото */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Обрезает лишнее, если фото слишком большое */
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.2); /* Легкий фон для пустых зон */
+    border-radius: 15px;
+}
+
+/* Сама картинка героя */
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Картинка полностью помещается без искажений */
+    transition: transform 0.3s ease;
+}
+
+/* Эффект увеличения при наведении */
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.back-container {
+    margin: 20px 0;
+}
+
+.back-link {
+    display: inline-block;
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(0, 212, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background: rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+    transform: translateX(-5px); /* Небольшой сдвиг влево при наведении */
+}

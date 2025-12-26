@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Shop - Характеристики Героев</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1628 0%, #1a2d4d 100%);
+            color: #fff;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .detail-section {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(26, 45, 77, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px;
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            box-shadow: 0 0 50px rgba(0, 150, 255, 0.2);
+        }
+
+        .detail-section:target { display: block; }
+
+        .hero-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            padding-bottom: 20px;
+        }
+
+        .role-badge {
+            background: #ff0055;
+            padding: 5px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .stat-value {
+            display: block;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #00d4ff, #0096ff);
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-button:hover { transform: scale(1.05); box-shadow: 0 0 20px #00d4ff; }
+        
+        img.hero-big {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            display: block;
+            margin: 0 auto 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center; color: #00d4ff; text-shadow: 0 0 20px rgba(0,212,255,0.5);">Досье Героев</h1>
+
+    <section id="hero1" class="detail-section">
+        <div class="hero-header">
+            <h2>Хаябуса</h2>
+            <span class="role-badge" style="background: #ff4757;">Убийца</span>
+        </div>
+        <img src="media/хаябуса.png" alt="Хаябуса" class="hero-big">
+        
+        <div class="stats-grid">
+            <div class="stat-item"> Сложность <span class="stat-value">Высокая</span></div>
+            <div class="stat-item"> Урон <span class="stat-value">9/10</span></div>
+            <div class="stat-item"> Живучесть <span class="stat-value">3/10</span></div>
+        </div>
+
+        <h3>Описание:</h3>
+        <p>Мастер теней. Хаябуса специализируется на одиночных целях. Его ультимейт «Теневой убийца» делает его неуязвимым во время атаки, позволяя мгновенно стирать вражеских стрелков и магов.</p>
+        
+        <a href="index.html" class="back-button">← В магазин</a>
+    </section>
+
+    <section id="hero2" class="detail-section">
+        <div class="hero-header">
+            <h2>Джой</h2>
+            <span class="role-badge" style="background: #ffa502;">Убийца / Маг</span>
+        </div>
+        <img src="media/джой.png" alt="Джой" class="hero-big">
+        
+        <div class="stats-grid">
+            <div class="stat-item"> Сложность <span class="stat-value">Экстремальная</span></div>
+            <div class="stat-item"> Мобильность <span class="stat-value">10/10</span></div>
+            <div class="stat-item"> Контроль <span class="stat-value">5/10</span></div>
+        </div>
+
+        <h3>Описание:</h3>
+        <p>Ритмичный убийца. Джой требует идеального тайминга под музыку её способностей. Она невероятно быстра и способна прорываться сквозь контроль врага, нанося огромный магический урон по площади.</p>
+        
+        <a href="index.html" class="back-button">← В магазин</a>
+    </section>
+
+    <section id="hero3" class="detail-section">
+        <div class="hero-header">
+            <h2>Беатрис</h2>
+            <span class="role-badge" style="background: #2ed573;">Стрелок</span>
+        </div>
+        <img src="media/беатрис.png" alt="Беатрис" class="hero-big">
+        
+        <div class="stats-grid">
+            <div class="stat-item"> Сложность <span class="stat-value">Высокая</span></div>
+            <div class="stat-item"> Гибкость <span class="stat-value">10/10</span></div>
+            <div class="stat-item"> Дальность <span class="stat-value">9/10</span></div>
+        </div>
+
+        <h3>Описание:</h3>
+        <p>Гений оружия. Беатрис носит с собой 4 вида оружия: дробовик, снайперку, гранатомет и автоматы. Это делает её самым универсальным стрелком, способным адаптироваться к любой ситуации на карте.</p>
+        
+        <a href="index.html" class="back-button">← В магазин</a>
+    </section>
+
+    <section id="hero4" class="detail-section">
+        <div class="hero-header">
+            <h2>Ланселот</h2>
+            <span class="role-badge" style="background: #ff4757;">Убийца</span>
+        </div>
+        <img src="media/ланселот.png" alt="Ланселот" class="hero-big">
+        
+        <div class="stats-grid">
+            <div class="stat-item"> Сложность <span class="stat-value">Высокая</span></div>
+            <div class="stat-item"> Скорость <span class="stat-value">9/10</span></div>
+            <div class="stat-item"> Стиль <span class="stat-value">Legendary</span></div>
+        </div>
+
+        <h3>Описание:</h3>
+        <p>Виртуоз фехтования. Ланселот использует свои рывки, чтобы бесконечно перемещаться между врагами. Его трудно поймать, а его «Прокол» позволяет танцевать на поле боя, оставаясь недосягаемым.</p>
+        
+        <a href="index.html" class="back-button">← В магазин</a>
+    </section>
+
+</body>
+</html>
