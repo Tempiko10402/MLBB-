@@ -34,7 +34,9 @@ input[name="hero-filter"] {
 #assassin:checked ~ .filter-controls label[for="assassin"],
 #tank:checked ~ .filter-controls label[for="tank"],
 #marksman:checked ~ .filter-controls label[for="marksman"],
-#fighter:checked ~ .filter-controls label[for="fighter"] {
+#fighter:checked ~ .filter-controls label[for="fighter"],
+#mag:checked ~ .filter-controls label[for="mag"],
+#roum:checked ~ .filter-controls label[for="roum"] {
     background: #00d4ff;
     color: #0a1628;
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
@@ -46,7 +48,9 @@ input[name="hero-filter"] {
 #assassin:checked ~ .products-grid .product-card,
 #tank:checked ~ .products-grid .product-card,
 #marksman:checked ~ .products-grid .product-card,
-#fighter:checked ~ .products-grid .product-card {
+#fighter:checked ~ .products-grid .product-card,
+#mag:checked ~ .products-grid .product-card,
+#roum:checked ~ .products-grid .product-card {
     display: none;
 }
 
@@ -54,7 +58,9 @@ input[name="hero-filter"] {
 #assassin:checked ~ .products-grid .item-assassin,
 #tank:checked ~ .products-grid .item-tank,
 #marksman:checked ~ .products-grid .item-marksman,
-#fighter:checked ~ .products-grid .item-fighter {
+#fighter:checked ~ .products-grid .item-fighter,
+#mag:checked ~ .products-grid .item-mag,
+#roum:checked ~ .products-grid .item-roum {
     display: block;
     animation: fadeIn 0.5s ease forwards;
 }
